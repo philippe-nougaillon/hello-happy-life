@@ -58,3 +58,5 @@ gem 'bulma-rails', '~> 0.7.4'
 gem 'bulma-extensions-rails', '~> 1.0.30'
 
 gem 'devise', '~> 4.7.3'
+
+gem 'bulma_form_builder'
