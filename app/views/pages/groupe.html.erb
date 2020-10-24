@@ -1,0 +1,21 @@
+
+<figure class="image is-128x128">
+    <img src="https://bulma.io/images/placeholders/256x256.png" alt="Placeholder image">
+</figure>
+
+<h1 class="title is-2">
+    <%= @groupe.nom %>
+    <p class="subtitle"><i><%= @groupe.activité.nom %></i></p>
+</h1>
+
+<h1 class="title">
+  Membres
+</h1>
+
+<% @groupe.users.each do | user | %>
+    <%= user.email %>
+    <br>
+<% end %>
+<br><br>
+
+<%= link_to "Rejoindre ce groupe", pages_groupe_path(groupe_id: @groupe.id, rejoindre: true), class: "button is-primary" %>
