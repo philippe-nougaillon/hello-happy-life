@@ -1,16 +1,4 @@
-<section class="hero is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
-        Hello title
-      </h1>
-      <h2 class="subtitle">
-        Hello subtitle
-      </h2>
-    </div>
-  </div>
-</section>
-<br>
+
 
 <h1 class="title">
   Activités
@@ -31,7 +19,7 @@
 <% unless @groupes.size.zero? %>
   <div class="container">
     <div class="columns is-multiline is-mobile">
-      <% @groupes.each_with_index do | groupe, index | %>
+      <% @groupes.each do | groupe | %>
         <div class="column is-one-fifth-widescreen is-one-quarter-desktop is-one-third-tablet is-half-mobile">
           <div class="card" style="display: inline;">
             <div class="card-image">

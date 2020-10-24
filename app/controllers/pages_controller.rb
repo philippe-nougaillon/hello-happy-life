@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   def home
     @groupes = []
     if current_user
-      @groupes = current_user.organisation.groupes
+      @groupes = current_user.organisation.groupes.includes(:activité)
       unless params[:activité].blank? 
         @groupes = @groupes.where(activité_id: params[:activité])
       end
