@@ -1,22 +1,29 @@
 class PagesController < ApplicationController
 
   def home
-    @groupes = []
     if current_user
       @groupes = current_user.organisation.groupes.includes(:activité)
-      unless params[:activité].blank? 
-        @groupes = @groupes.where(activité_id: params[:activité])
-      end
+    else
+      @groupes = Groupe.all.includes(:activité)
     end
+
+    unless params[:activité].blank? 
+      @groupes = @groupes.where(activité_id: params[:activité])
+    end
+
   end
 
   def groupe
-    @groupe = current_user.organisation.groupes.find(params[:groupe_id])
+    @groupe = Groupe.find(params[:groupe_id])
 
     unless params[:rejoindre].blank?
-      unless @groupe.users.include?(current_user) 
-        @groupe.users << current_user
-        flash[:notice] = "Bienvenue dans ce groupe !"
+      if current_user
+        unless @groupe.users.include?(current_user) 
+          @groupe.users << current_user
+          flash[:notice] = "Bienvenue dans ce groupe !"
+        end
+      else
+        flash[:alert] = "Vous devez vous connecter pour rejoindre ce groupe !"
       end
     end
   end

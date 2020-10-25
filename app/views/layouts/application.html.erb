@@ -14,8 +14,9 @@
     <%= render "partials/banner" %>
     
     <div class="container">
+
       <% if notice || alert %>
-        <div class="notification">
+        <div class="notification <%= notice ? 'is-success' : 'is-warning' %> is-light">
           <button class="delete"></button>
           <p class="notice"><%= notice %></p>
           <p class="alert"><%= alert %></p>
@@ -26,16 +27,17 @@
 
     </div>
   </body>
-</html>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
-      var $notification = $delete.parentNode;
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+        var $notification = $delete.parentNode;
 
-      $delete.addEventListener('click', () => {
-        $notification.parentNode.removeChild($notification);
+        $delete.addEventListener('click', () => {
+          $notification.parentNode.removeChild($notification);
+        });
       });
     });
-  });
-</script>
+  </script>
+
+</html>
