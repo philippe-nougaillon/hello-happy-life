@@ -16,9 +16,7 @@ class PagesController < ApplicationController
     unless params[:rejoindre].blank?
       unless @groupe.users.include?(current_user) 
         @groupe.users << current_user
-        flash[:notice] = "Membre ajouté"
-      else
-        flash[:alert] = "Membre déjà inscrit !"
+        flash[:notice] = "Bienvenue dans ce groupe !"
       end
     end
   end
