@@ -58,8 +58,8 @@ end
 # gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # BULMA
-gem 'bulma-rails', '~> 0.7.4'
-gem 'bulma-extensions-rails', '~> 1.0.30'
+gem 'bulma-rails', '~> 0.9.0'
+gem 'bulma-extensions-rails', '~> 6.2.7'
 
 gem 'devise', '~> 4.7.3'
 
