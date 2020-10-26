@@ -6,7 +6,7 @@
         </figure>
     </div>
 
-    <div class="column">
+    <div class="column is-4">
         <h1 class="title is-2">
             <%= @groupe.nom %>
             <p class="subtitle"><i><%= @groupe.activité.nom %></i></p>
@@ -31,7 +31,7 @@
 
     <div class="column">
         <h1 class="title">
-            Prochaine sortie
+            Prochaine rencontre
         </h1>
         <ul>
             <li>01/12/2020 - Paris 20</li>
@@ -49,7 +49,7 @@
     <%= render "partials/discussions" %>
 <% else %>
     <p>
-        Il faut être membre du groupe pour voir les discussions... 
+        Il faut être membre pour voir les discussions entre les membres de ce groupe... 
     </p>
 <% end %>
     

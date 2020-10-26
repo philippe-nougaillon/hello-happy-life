@@ -27,6 +27,8 @@
     <%= render "partials/banner" %>
     
     <div class="container">
+  
+      <%= render "partials/breadcrumb" %>
 
       <% if notice || alert %>
         <div class="notification <%= notice ? 'is-success' : 'is-warning' %> is-light">
