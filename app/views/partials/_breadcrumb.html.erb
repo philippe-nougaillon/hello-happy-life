@@ -1,12 +1,12 @@
 <nav class="breadcrumb" aria-label="breadcrumbs">
   <ul>
-    <li class="<%= 'is-active' if params[:action] == 'home' %>">
+    <li>
         <%= link_to "Home", root_path %>
     </li>
-    <li class="<%= 'is-active' if params[:action] == 'groupe' %>">
-        <% if params[:action] == 'groupe' %>
-            <a href="#">Groupe</a>
-        <% end %>
-    </li>
+    <%  if params[:action] == 'groupe' %>
+      <li class="is-active">
+        <a href="#">Groupe</a>
+      </li>
+    <% end %>
   </ul>
 </nav>
