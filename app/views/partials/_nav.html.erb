@@ -24,8 +24,6 @@
 
       <div class="navbar-item">
 
-        <%= link_to current_user.email if current_user %>
-
         <div class="buttons">
           <% if (!user_signed_in?) %>
             <%= link_to "Sign Up",
@@ -37,6 +35,11 @@
                 class: "button is-light" 
             %>
           <% else %>        
+            <div class="button is-light">
+              <%= link_to current_user.email, edit_user_registration_path(current_user) %>
+              (<%= current_user.organisation.nom %>)
+            </div>
+
             <%= link_to "Log out", 
                 destroy_user_session_path, 
                 method: :delete, 
