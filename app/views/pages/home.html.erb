@@ -2,7 +2,7 @@
   Activités
 </h1>
 
-<div class="tags are-medium">
+<div class="tags are-large">
   <% Activité.all.each do | activité | %>
     <span class="tag is-rounded">
       <%= link_to activité.nom, root_path(activité: activité.id) %>
