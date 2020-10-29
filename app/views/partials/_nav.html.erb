@@ -40,6 +40,13 @@
               (<%= current_user.organisation.nom %>)
             </div>
 
+            <% if current_user.admin? %>
+              <%= link_to "Admin", 
+                  pages_admin_path, 
+                  class: "button is-warning" 
+              %>
+            <% end %>
+
             <%= link_to "Log out", 
                 destroy_user_session_path, 
                 method: :delete, 

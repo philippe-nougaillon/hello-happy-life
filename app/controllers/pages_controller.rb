@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
 
+  before_action :authenticate_user!, only: [:admin]
+
   def home
     if current_user
       @groupes = current_user.organisation.groupes.includes(:activité)
@@ -26,6 +28,10 @@ class PagesController < ApplicationController
         flash[:alert] = "Vous devez vous connecter pour rejoindre ce groupe !"
       end
     end
+  end
+
+  def admin
+
   end
 
 end
