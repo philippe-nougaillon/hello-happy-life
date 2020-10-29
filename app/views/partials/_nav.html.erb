@@ -37,7 +37,6 @@
           <% else %>        
             <div class="button is-light">
               <%= link_to current_user.email, edit_user_registration_path(current_user) %>
-              (<%= current_user.organisation.nom %>)
             </div>
 
             <% if current_user.admin? %>
