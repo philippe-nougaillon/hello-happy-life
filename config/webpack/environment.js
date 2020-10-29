@@ -1,4 +1,4 @@
-const { environment } = require('@rails/webpacker')
+const { config, environment } = require('@rails/webpacker')
 
 const webpack = require('webpack')
 environment.plugins.append('Provide', 
@@ -8,4 +8,8 @@ environment.plugins.append('Provide',
     })
 )
 
-module.exports = environment
+// const { config, environment, Environment } = require('@rails/webpacker');
+const WebpackerPwa = require('webpacker-pwa');
+new WebpackerPwa(config, environment);
+
+module.exports = environment;
