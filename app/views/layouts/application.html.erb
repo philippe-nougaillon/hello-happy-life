@@ -49,21 +49,24 @@
     <%= render "partials/nav" %>
     <%= render "partials/banner" %>
     
-    <div class="container">
-  
-      <%= render "partials/breadcrumb" %>
+    <section class="section">
+    
+      <div class="container">
+    
+        <%= render "partials/breadcrumb" %>
 
-      <% if notice || alert %>
-        <div class="notification <%= notice ? 'is-success' : 'is-warning' %> is-light">
-          <button class="delete"></button>
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
-        </div>
-      <% end %>
+        <% if notice || alert %>
+          <div class="notification <%= notice ? 'is-success' : 'is-warning' %> is-light">
+            <button class="delete"></button>
+            <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
+          </div>
+        <% end %>
 
-      <%= yield %>
+        <%= yield %>
 
-    </div>
+      </div>
+    </section>
   </body>
 
 </html>
