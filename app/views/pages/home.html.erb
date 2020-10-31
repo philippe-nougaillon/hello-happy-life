@@ -11,7 +11,9 @@
 <div class="container">
   <div class="columns is-multiline is-mobile">
     <% @groupes.each do | groupe | %>
-      <%= render "partials/groupe", groupe: groupe %>
+      <div class="column is-one-fifth-widescreen is-one-quarter-desktop is-one-third-tablet is-full-mobile">
+        <%= render "partials/groupe", groupe: groupe %>
+      </div>
     <% end %>
   </div>
 </div>
