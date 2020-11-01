@@ -9,11 +9,13 @@
             Membres
         </h1>
 
-        <ul>
-            <% @groupe.users.each do | user | %>
-                <li><%= user.email %></li>
-            <% end %>
-        </ul>
+        <div class="content">
+            <ul>
+                <% @groupe.users.each do | user | %>
+                    <li><%= user.email %></li>
+                <% end %>
+            </ul>
+        </div>
         <br>
 
         <% unless @groupe.users.include?(current_user)  %>
@@ -26,9 +28,12 @@
             <br />
             Prochaine rencontre
         </h1>
-        <ul>
-            <li>01/12/2020 - Paris 20</li>
-        </ul>
+
+        <div class="content">
+            <ul>
+                <li>01/12/2020 - Paris 20</li>
+            </ul>
+        </div>
     </div>
 
     <div class="column">
