@@ -1,7 +1,7 @@
 <div class="card">
     <header class="card-header">
-        <p class="card-header-title is-centered">
-            <%= groupe.activité.nom %></i>
+        <p class="card-header-title">
+            <%= groupe.nom %>
         </p>
     </header>
 
@@ -13,7 +13,16 @@
     
     <div class="card-content">
         <div class="content">
-            <p class="title is-5"><%= link_to groupe.nom, pages_groupe_path(groupe_id: groupe.id) %></p>
+            <p>
+                <%= groupe.activité.nom %></i>
+            </p>
         </div>
     </div>
+
+    <% unless params[:groupe_id] %>
+        <footer class="card-footer">
+            <%= link_to "En savoir plus", pages_groupe_path(groupe_id: groupe.id), class: "card-footer-item" %>
+        </footer>
+    <% end %>
+
 </div>
