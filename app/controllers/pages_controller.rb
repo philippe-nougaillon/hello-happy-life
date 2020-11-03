@@ -3,11 +3,7 @@ class PagesController < ApplicationController
   before_action :authenticate_user!, only: [:admin]
 
   def home
-    if current_user
-      @groupes = current_user.organisation.groupes.includes(:activité)
-    else
-      @groupes = Groupe.all.includes(:activité)
-    end
+    @groupes = Groupe.all.includes(:activité)
 
     unless params[:activité].blank? 
       @groupes = @groupes.where(activité_id: params[:activité])
