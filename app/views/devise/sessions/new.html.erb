@@ -1,22 +1,27 @@
 <h2 class="title">Connexion</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), builder: BulmaFormBuilder::FormBuilder) do |f| %>
-  <div class="field">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
 
-  <div class="field">
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+  <div class="columns">
+    <div class="column is-one-quarter">
+      <div class="field">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
+      <div class="field">
+        <%= f.password_field :password, autocomplete: "current-password" %>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+        </div>
+      <% end %>
+
+      <div class="actions">
+        <%= f.submit "Se connecter", class: "button is-primary" %>
+      </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Se connecter", class: "button is-primary" %>
   </div>
 <% end %>
 

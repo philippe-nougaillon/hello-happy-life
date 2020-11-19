@@ -8,7 +8,7 @@
 
 Organisation.create(nom: "Reynolds Industries")
 
-Activité.create([{ nom: "Running" }, { nom: "Yoga" }, { nom: "Marche nordique" }, { nom: "Echecs" }, { nom: "Danse de salon" }, { nom: "Pilate" } ])
+Activité.create([{ nom: "Running" }, { nom: "Yoga" }, { nom: "Marche nordique" }, { nom: "Chess Boxing" }, { nom: "Danse de salon" }, { nom: "Pilate" } ])
 
 User.create(organisation_id: 1, admin: true, email: "philippe.nougaillon@gmail.com", password: "0123456", password_confirmation: "0123456")
 User.create(organisation_id: 1, admin: true, email: "richard.vonkat@gmail.com", password: "0123456", password_confirmation: "0123456")
