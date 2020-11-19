@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get 'pages/groupe'
   get 'pages/admin'
+  get 'pages/about'
  
   devise_for :users
  

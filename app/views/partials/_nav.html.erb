@@ -26,6 +26,10 @@
 
         <div class="buttons">
           <% if (!user_signed_in?) %>
+            <%= link_to "A propos de...", 
+                pages_about_path, 
+                class: "button is-info" 
+            %>
             <%= link_to "S'inscrire",
                 new_user_registration_path, 
                 class: "button is-primary" 
