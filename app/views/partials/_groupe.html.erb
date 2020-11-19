@@ -1,9 +1,11 @@
 <div class="card">
 
     <header class="card-header">
-        <p class="card-header-title">
-            <%= groupe.nom %>
-        </p>
+        <div class="content">
+            <p class="card-header-title">
+                <%= groupe.activité.nom %></i>
+            </p>
+        </div>
     </header>
 
     <div class="card-image">
@@ -13,11 +15,7 @@
     </div>
     
     <div class="card-content">
-        <div class="content">
-            <p>
-                <%= groupe.activité.nom %></i>
-            </p>
-        </div>
+        <%= groupe.nom %>
     </div>
 
     <% unless params[:groupe_id] %>
