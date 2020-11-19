@@ -15,17 +15,14 @@
                     <li><%= user.email %></li>
                 <% end %>
             </ul>
+            <% unless @groupe.users.include?(current_user) %>
+                <%= link_to "Rejoindre ce groupe", pages_groupe_path(groupe_id: @groupe.id, rejoindre: true), class: "button is-primary is-light" %>
+            <% else %>
+                <%= link_to "Quitter ce groupe", pages_groupe_path(groupe_id: @groupe.id, quitter: true), class: "button is-primary is-light" %>
+            <% end %>
         </div>
-        <br>
-
-        <% unless @groupe.users.include?(current_user)  %>
-            <%= link_to "Rejoindre ce groupe", pages_groupe_path(groupe_id: @groupe.id, rejoindre: true), class: "button is-primary is-light" %>
-        <% else %>
-            <%= link_to "Quitter ce groupe", pages_groupe_path(groupe_id: @groupe.id, quitter: true), class: "button is-primary is-light" %>
-        <% end %>
 
         <h1 class="title">
-            <br />
             Prochaine rencontre
         </h1>
 
