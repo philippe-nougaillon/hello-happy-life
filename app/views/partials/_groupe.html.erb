@@ -14,14 +14,27 @@
         </figure>
     </div>
     
-    <div class="card-content">
-        <%= groupe.nom %>
-    </div>
-
     <% unless params[:groupe_id] %>
+        <div class="card-content">
+            <%= truncate groupe.nom, length: 25 %>
+         </div>
+
         <footer class="card-footer">
-            <%= link_to "En savoir plus...", pages_groupe_path(groupe_id: groupe.id), class: "card-footer-item" %>
+            <p class="card-footer-item">
+                <span>
+                    <%= pluralize groupe.users.count, 'membre' %>
+                </span>
+            </p>
+            <p class="card-footer-item">
+                <span>
+                    <%= link_to "Voir plus...", pages_groupe_path(groupe_id: groupe.id), class: "card-footer-item" %>
+                </span>
+            </p>
         </footer>
+    <% else %>
+        <div class="card-content">
+            <%= groupe.nom %>
+         </div>
     <% end %>
 
 </div>
