@@ -8,7 +8,7 @@
 
     <div class="card-image">
         <figure class="image is-4by3">
-            <%= image_tag "1280x960.png", alt: "Placeholder image" %>
+            <%= image_tag "#{groupe.activité.nom.downcase.gsub(' ', '-')}.jpg", alt: "Placeholder image" %>
         </figure>
     </div>
     
