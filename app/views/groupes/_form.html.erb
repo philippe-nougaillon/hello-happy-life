@@ -1,0 +1,21 @@
+<%= bulma_form_with(model: groupe, local: true) do |form| %>
+  <% if groupe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(groupe.errors.count, "error") %> prohibited this groupe from being saved:</h2>
+
+      <ul>
+        <% groupe.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.select :organisation_id, options_from_collection_for_select(Organisation.all, :id, :nom, @groupe.organisation_id) %>
+  <%= form.select :activité_id, options_from_collection_for_select(Activité.all, :id, :nom, @groupe.activité_id) %>
+  <%= form.text_field :nom, required: true, placeholder: "Nom du groupe" %>
+
+  <div class="actions">
+    <%= form.submit "Enregistrer", class: "button is-primary" %>
+  </div>
+<% end %>

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="title">Groupes</h1>
+
+<table class="table is-fullwidth is-striped">
+  <thead>
+    <tr>
+      <th>Organisation</th>
+      <th>Activité</th>
+      <th>Nom</th>
+      <th>Membres</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @groupes.each do |groupe| %>
+      <tr>
+        <td><%= groupe.organisation.nom %></td>
+        <td><%= groupe.activité.nom %></td>
+        <td><%= groupe.nom %></td>
+        <td><%= groupe.users.size %></td>
+        <td><%= link_to 'Voir', groupe %></td>
+        <td><%= link_to 'Modifier', edit_groupe_path(groupe) %></td>
+        <td><%= link_to 'Supprimer', groupe, method: :delete, data: { confirm: 'Etes-vous bien certain ?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nouveau Groupe', new_groupe_path %>

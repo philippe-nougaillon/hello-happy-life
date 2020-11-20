@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   get 'pages/about'
  
   devise_for :users
+
+  resources :groupes
  
 end

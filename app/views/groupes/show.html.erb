@@ -1,0 +1,18 @@
+<p>
+  <strong>Organisation:</strong>
+  <%= @groupe.organisation.nom %>
+</p>
+
+<p>
+  <strong>Activité:</strong>
+  <%= @groupe.activité.nom %>
+</p>
+
+<p>
+  <strong>Nom:</strong>
+  <%= @groupe.nom %>
+</p>
+<br>
+
+<%= link_to 'Modifier', edit_groupe_path(@groupe) %> |
+<%= link_to 'Retour', groupes_path %>
