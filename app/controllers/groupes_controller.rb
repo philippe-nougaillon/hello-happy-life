@@ -1,15 +1,18 @@
 class GroupesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_groupe, only: [:show, :edit, :update, :destroy]
 
   # GET /groupes
   # GET /groupes.json
   def index
+    authorize Groupe
     @groupes = Groupe.all
   end
 
   # GET /groupes/1
   # GET /groupes/1.json
   def show
+    authorize @groupe
   end
 
   # GET /groupes/new
@@ -19,12 +22,14 @@ class GroupesController < ApplicationController
 
   # GET /groupes/1/edit
   def edit
+    authorize @groupe
   end
 
   # POST /groupes
   # POST /groupes.json
   def create
     @groupe = Groupe.new(groupe_params)
+    authorize @groupe
 
     respond_to do |format|
       if @groupe.save
@@ -40,6 +45,7 @@ class GroupesController < ApplicationController
   # PATCH/PUT /groupes/1
   # PATCH/PUT /groupes/1.json
   def update
+    authorize @groupe
     respond_to do |format|
       if @groupe.update(groupe_params)
         format.html { redirect_to @groupe, notice: 'Groupe was successfully updated.' }
@@ -54,6 +60,7 @@ class GroupesController < ApplicationController
   # DELETE /groupes/1
   # DELETE /groupes/1.json
   def destroy
+    authorize @groupe
     @groupe.destroy
     respond_to do |format|
       format.html { redirect_to groupes_url, notice: 'Groupe was successfully destroyed.' }

@@ -63,3 +63,4 @@ gem 'bulma-extensions-rails', '~> 6.2.7'
 gem 'bulma_form_builder'
 
 gem 'devise', '~> 4.7.3'
+gem 'pundit'
