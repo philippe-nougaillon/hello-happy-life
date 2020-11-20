@@ -2,20 +2,18 @@
   <ul>
     
     <li>
-        <%= link_to "Home", root_path %>
+      <%= link_to "Home", root_path %>
     </li>
-    
-    <% if params[:action] == 'groupe' %>
-      <li class="is-active">
-        <a href="#">Groupe '<%= Groupe.find(params[:groupe_id]).nom %>'</a>
-      </li>
-    <% end %>
-    
-    <% if params[:action] == 'admin' %>
-      <li class="is-active">
-        <a href="#">Admin</a>
-      </li>
-    <% end %>
+
+    <li class="is-active">
+      <a href="#">
+        <% if params[:action] == 'groupe' %>
+            Groupe '<%= @groupe.nom %>'
+        <% elsif params[:action] == 'admin' %>
+            Admin
+        <% end %>
+      </a>
+    </li>
 
   </ul>
 </nav>
