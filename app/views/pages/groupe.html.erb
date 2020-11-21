@@ -39,7 +39,7 @@
         </h1>
 
         <% if @groupe.users.include?(current_user) %> 
-            <%= render "partials/discussions" %>
+            <%= render "partials/discussions", locals: {groupe: @groupe} %>
         <% else %>
             <p>
                 Prenez part aux conversations du groupe en vous connectant.
