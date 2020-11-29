@@ -8,9 +8,9 @@
     <li class="is-active">
       <a href="#">
         <% if params[:action] == 'groupe' %>
-            Groupe '<%= @groupe.nom %>'
+          <%= "Groupe : #{@groupe.nom}" %>
         <% elsif params[:action] == 'admin' %>
-            Admin
+          Admin
         <% end %>
       </a>
     </li>

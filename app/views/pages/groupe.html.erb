@@ -41,9 +41,7 @@
         <% if @groupe.users.include?(current_user) %> 
             <%= render "partials/discussions", locals: {groupe: @groupe} %>
         <% else %>
-            <p>
-                Prenez part aux conversations du groupe en vous connectant.
-            </p>
+            <i>Prenez part aux conversations du groupe en vous connectant.</i>
         <% end %>
     </div>
 

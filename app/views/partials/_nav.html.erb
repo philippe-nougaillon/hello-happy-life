@@ -19,17 +19,17 @@
       <div class="navbar-item">
         <div class="buttons">
           <% if (!user_signed_in?) %>
-            <%= link_to "A propos de...", 
+            <%= link_to "A propos", 
                 pages_about_path, 
-                class: "button is-info" 
+                class: "button is-light" 
             %>
             <%= link_to "S'inscrire",
                 new_user_registration_path, 
-                class: "button is-primary" 
+                class: "button is-info" 
             %>
             <%= link_to "Connexion", 
                 new_user_session_path, 
-                class: "button is-light" 
+                class: "button is-primary" 
             %>
           <% else %>        
             <div class="button is-light">
