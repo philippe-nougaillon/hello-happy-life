@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :groupes
+
+  resources :discussions
  
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_23_111013) do
+ActiveRecord::Schema.define(version: 2020_12_19_163547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,16 @@ ActiveRecord::Schema.define(version: 2020_11_23_111013) do
     t.string "nom"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "discussions", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "groupe_id", null: false
+    t.string "message"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["groupe_id"], name: "index_discussions_on_groupe_id"
+    t.index ["user_id"], name: "index_discussions_on_user_id"
   end
 
   create_table "groupes", force: :cascade do |t|
@@ -64,4 +74,6 @@ ActiveRecord::Schema.define(version: 2020_11_23_111013) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "discussions", "groupes"
+  add_foreign_key "discussions", "users"
 end

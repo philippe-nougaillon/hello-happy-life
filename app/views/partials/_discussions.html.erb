@@ -1,9 +1,14 @@
-<% 2.times do %>
-    <% @groupe.users.each_with_index do | user, index | %>
-        <%= render "partials/discussion", 
-                    name: user.email.split('@').first, 
-                    avatar: "avatar#{index}.png", 
-                    message: index.even? ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit." 
-                                         : "Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis." %>
-    <% end %>
+<% @groupe.discussions.last(3).each_with_index do | discussion, index | %>
+    <%= render "partials/discussion", 
+                    name: discussion.user.email.split('@').first, 
+                    avatar: "avatar#{discussion.user.id}.png", 
+                    timeago: time_ago_in_words(discussion.created_at),
+                    message: discussion.message %>
+<% end %>
+
+<%= bulma_form_with(model: @groupe.discussions.build, local: true) do |form| %>
+    <%= form.hidden_field :groupe_id %>
+    <%= form.hidden_field :user_id, value: current_user.id %>
+    <%= form.text_field :message, required: true, autofocus: true %>
+    <%= form.submit "Poster", class: "button is-primary" %>
 <% end %>

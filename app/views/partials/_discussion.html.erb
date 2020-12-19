@@ -8,9 +8,11 @@
     <div class="media-content">
         <div class="content">
             <p>
-                <strong><%= local_assigns[:name] %></strong> <small>31m</small>
-                <br>
-                <%= local_assigns[:message] %>
+                <strong><%= local_assigns[:name] %></strong> 
+                <small><%= local_assigns[:timeago] %></small>
+                <div class="content">
+                    <%= local_assigns[:message] %>
+                </div>
             </p>
         </div>
     </div>
