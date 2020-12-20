@@ -1,0 +1,5 @@
+<% if @groupe.sorties.any? %>
+    <ul>
+        <li><%= l @groupe.sorties.last.le %> : <%= @groupe.sorties.last.lieu %></li> 
+    </ul>
+<% end %>

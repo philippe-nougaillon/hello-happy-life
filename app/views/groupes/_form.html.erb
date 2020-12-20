@@ -15,6 +15,20 @@
   <%= form.select :activité_id, options_from_collection_for_select(Activité.all, :id, :nom, @groupe.activité_id) %>
   <%= form.text_field :nom, required: true, placeholder: "Nom du groupe" %>
 
+  <h4 class="title is-4">Sorties</h4>
+  <div class="content">
+    <ul>
+      <%= form.fields_for :sorties do |sorties_form| %>
+        <li>
+          <%= sorties_form.label 'Le : ' %>
+          <%= sorties_form.datetime_field :le, class: "control" %>
+          <%= sorties_form.text_field :lieu %>
+        </li>
+        <br>
+      <% end %>
+    </ul>
+  </div>
+
   <div class="actions">
     <%= form.submit "Enregistrer", class: "button is-primary" %>
   </div>

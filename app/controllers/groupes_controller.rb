@@ -18,11 +18,13 @@ class GroupesController < ApplicationController
   # GET /groupes/new
   def new
     @groupe = Groupe.new
+    @groupe.sorties.build
   end
 
   # GET /groupes/1/edit
   def edit
     authorize @groupe
+    @groupe.sorties.build
   end
 
   # POST /groupes
@@ -76,6 +78,6 @@ class GroupesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def groupe_params
-      params.require(:groupe).permit(:organisation_id, :activité_id, :nom)
+      params.require(:groupe).permit(:organisation_id, :activité_id, :nom, sorties_attributes: [:id, :le, :lieu])
     end
 end
