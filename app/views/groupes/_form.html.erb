@@ -16,18 +16,12 @@
   <%= form.text_field :nom, required: true, placeholder: "Nom du groupe" %>
 
   <h4 class="title is-4">Sorties</h4>
-  <div class="content">
-    <ul>
-      <%= form.fields_for :sorties do |sorties_form| %>
-        <li>
-          <%= sorties_form.label 'Le : ' %>
-          <%= sorties_form.datetime_field :le, class: "control" %>
-          <%= sorties_form.text_field :lieu %>
-        </li>
-        <br>
-      <% end %>
-    </ul>
-  </div>
+  <%= form.fields_for :sorties do |sorties_form| %>
+    <div class="field is-horizontal">
+      <%= sorties_form.datetime_field :le %>
+      <%= sorties_form.text_field :lieu, placeholder: "Lieu", hide_label: true %>
+    </div>
+  <% end %>
 
   <div class="actions">
     <%= form.submit "Enregistrer", class: "button is-primary" %>

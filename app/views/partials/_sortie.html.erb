@@ -1,5 +1,9 @@
 <% if @groupe.sorties.any? %>
     <ul>
-        <li><%= l @groupe.sorties.last.le %> : <%= @groupe.sorties.last.lieu %></li> 
+        <li>
+            <b><%= l(@groupe.sorties.last.le, format: :long) %></b>
+            <br> 
+            <%= @groupe.sorties.last.lieu %>
+        </li> 
     </ul>
 <% end %>

@@ -1,3 +1,7 @@
+<h1 class="title">
+  <%= @groupe.nom %>
+</h1>
+
 <p>
   <strong>Organisation:</strong>
   <%= @groupe.organisation.nom %>
@@ -8,11 +12,22 @@
   <%= @groupe.activité.nom %>
 </p>
 
-<p>
-  <strong>Nom:</strong>
-  <%= @groupe.nom %>
-</p>
 <br>
+
+<h3 class="title is-3">
+  Sorties
+</h3>
+
+<div class="content">
+  <ul>
+    <% @groupe.sorties.each do | sortie | %>
+      <li>
+        <%= l(sortie.le, format: :long) %> :
+        <%= sortie.lieu %>
+      </li>
+    <% end %>
+  </ul>
+</div>
 
 <%= link_to 'Modifier', edit_groupe_path(@groupe) %> |
 <%= link_to 'Retour', groupes_path %>
