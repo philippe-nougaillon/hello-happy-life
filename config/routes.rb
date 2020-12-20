@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
-  
-  root 'pages#home'
+
+  devise_for :users
 
   get 'pages/groupe'
   get 'pages/admin'
   get 'pages/about'
- 
-  devise_for :users
+
+  post 'discussions/create'
 
   resources :groupes
+  
+  root 'pages#home'
 
-  resources :discussions
- 
 end
