@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: <%= ENV['REDIS_PROVIDER'] %>
+  url: redis://redistogo:4a9a92ea70708bdcb40aa3c74af52b96@soapfish.redistogo.com:10997/
   channel_prefix: hello-happy-life
