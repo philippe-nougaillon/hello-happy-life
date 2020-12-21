@@ -38,7 +38,15 @@
         </h1>
 
         <% if @groupe.users.include?(current_user) %> 
-            <%= render "partials/discussions", locals: {groupe: @groupe} %>
+            <div id="chat-panel" 
+                data-channel-subscribe="discussions" 
+                data-subchannel="<%= @groupe.id %>">
+
+                <div id="discussion-list">
+                    <%= render "partials/discussions", locals: {groupe: @groupe} %>
+                </div>
+            </div>
+            <%= render "partials/discussion_post", locals: {groupe: @groupe} %>
         <% else %>
             <i>Prenez part aux conversations du groupe en vous connectant.</i>
         <% end %>

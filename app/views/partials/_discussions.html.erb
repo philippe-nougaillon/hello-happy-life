@@ -5,12 +5,3 @@
                     timeago: time_ago_in_words(discussion.created_at),
                     message: discussion.message %>
 <% end %>
-
-<%= bulma_form_with(url: discussions_create_path, local: true) do |form| %>
-    <%= form.hidden_field :groupe_id, value: @groupe.id %>
-    <%= form.hidden_field :user_id, value: current_user.id %>
-
-    <%= form.text_field :message, required: true, autofocus: true %>
-
-    <%= form.submit "Poster", class: "button is-primary" %>
-<% end %>
