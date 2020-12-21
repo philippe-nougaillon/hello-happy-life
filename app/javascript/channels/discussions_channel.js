@@ -16,7 +16,6 @@ $(document).on('turbolinks:load', function () {
         received(data) {
           // Called when there's incoming data on the websocket for this channel
           const chatElement = document.querySelector("#discussion-list")
-          console.log(chatElement)
 
           if (chatElement) {
             chatElement.innerHTML = data.html
