@@ -23,7 +23,7 @@
             <p class="card-footer-item">
                 <span>
                     <% unless groupe.users.size.zero? %>
-                        <%= pluralize groupe.users.size, 'membre' %>
+                        <%= pluralize(groupe.users.size, 'membre', plural: 'membres') %>
                     <% end %>
                 </span>
             </p>
