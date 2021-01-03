@@ -10,7 +10,7 @@
 
     <div class="card-image">
         <figure class="image is-4by3">
-            <%= image_tag "#{groupe.activité.nom.downcase.gsub(' ', '-')}.jpg", alt: "Placeholder image" %>
+            <%= image_tag "#{groupe.activité.nom.downcase.gsub(' ', '-')}.jpg", loading: "lazy" %>
         </figure>
     </div>
     
