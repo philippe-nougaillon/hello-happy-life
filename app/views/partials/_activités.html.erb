@@ -1,6 +1,6 @@
 <div class="tags are-large">
   <% Activité.all.each do | activité | %>
-    <span class="tag is-rounded">
+    <span class="tag is-rounded is-medium">
       <%= link_to activité.nom, root_path(activité: activité.id) %>
     </span>
   <% end %>
