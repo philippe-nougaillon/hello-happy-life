@@ -1,19 +1,22 @@
-<nav class="breadcrumb is-medium has-bullet-separator" aria-label="breadcrumbs">
+
+<nav class="breadcrumb is-medium has-dot-separator" aria-label="breadcrumbs">
+<h3 class="subtitle is-3">
+
   <ul>
     
     <li>
       <%= link_to "Activités", root_path %>
     </li>
 
-    <li class="is-active">
-      <a href="#">
-        <% if params[:action] == 'groupe' %>
-          <%= "Groupe : #{@groupe.nom}" %>
-        <% elsif params[:action] == 'admin' %>
-          Admin
-        <% end %>
-      </a>
-    </li>
+    <% if ['groupe','admin'].include?(params[:action]) %>
+      <li class="is-active">
+        <a href="#">
+          <%= @groupe ? @groupe.nom : "Administration" %>
+        </a>
+      </li>
+    <% end %>
 
   </ul>
+</h3>
 </nav>
+
