@@ -1,14 +1,8 @@
-
 <nav class="breadcrumb is-medium" aria-label="breadcrumbs">
   <h3 class="subtitle is-3">
-    <ul>
-      <li><%= link_to "Activités", root_path %></li>
-
-      <% if ['groupe','admin'].include?(params[:action]) %>
-        <li><%= @groupe ? @groupe.nom : 'Administration' %></li>
-        <li></li>
-      <% end %>
-    </ul>
+      <ul>
+        <li class="is-active"><%= link_to "Activités", root_path %></li>
+      </ul>
   </h3>
 </nav>
 
