@@ -1,22 +1,14 @@
 
 <nav class="breadcrumb is-medium" aria-label="breadcrumbs">
-<h3 class="subtitle is-3">
+  <h3 class="subtitle is-3">
+    <ul>
+      <li><%= link_to "Activités", root_path %></li>
 
-  <ul>
-    
-    <li>
-      <%= link_to "Activités", root_path %>
-    </li>
-
-    <% if ['groupe','admin'].include?(params[:action]) %>
-      <li class="is-active">
-        <a href="#">
-          <%= @groupe ? @groupe.nom : "Administration" %>
-        </a>
-      </li>
-    <% end %>
-
-  </ul>
-</h3>
+      <% if ['groupe','admin'].include?(params[:action]) %>
+        <li><%= @groupe ? @groupe.nom : 'Administration' %></li>
+        <li></li>
+      <% end %>
+    </ul>
+  </h3>
 </nav>
 
