@@ -217,3 +217,17 @@ fr:
       long: "%A %d %B %Y %Hh%M"
       short: "%d %b %Hh%M"
     pm: pm
+  pages:
+    home:
+      title: "Activités"
+    about:
+      title: "A propos"
+    groupe:
+      title: "Groupe"
+  devise:
+    registrations:
+      title: "S'incrire"
+    sessions:
+      title: "Connexion"
+    passwords:
+      title: "Mot de passe oublié ?"

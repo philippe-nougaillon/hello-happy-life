@@ -66,3 +66,5 @@ gem 'devise', '~> 4.7.3'
 gem 'pundit'
 
 gem 'sitemap_generator'
+gem 'page_title_helper'
+

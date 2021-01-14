@@ -114,6 +114,8 @@ GEM
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
+    page_title_helper (4.0.0)
+      rails (>= 4.2.0, < 6.1)
     pg (1.2.3)
     public_suffix (4.0.6)
     puma (4.3.6)
@@ -230,6 +232,7 @@ DEPENDENCIES
   devise (~> 4.7.3)
   jbuilder (~> 2.7)
   listen (~> 3.2)
+  page_title_helper
   pg
   puma (~> 4.1)
   pundit
