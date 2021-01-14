@@ -64,3 +64,5 @@ gem 'bulma_form_builder'
 
 gem 'devise', '~> 4.7.3'
 gem 'pundit'
+
+gem 'sitemap_generator'
