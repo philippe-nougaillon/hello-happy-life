@@ -9,17 +9,19 @@
             Discussions
         </h3>
 
-        <% if @groupe.users.include?(current_user) %> 
-            <div id="chat-panel" 
-                data-channel-subscribe="discussions" 
-                data-subchannel="<%= @groupe.id %>">
+        <div id="chat-panel" 
+            data-channel-subscribe="discussions" 
+            data-subchannel="<%= @groupe.id %>">
 
-                <div id="discussion-list">
-                    <%= render "partials/discussions", locals: {groupe: @groupe} %>
-                </div>
+            <div id="discussion-list">
+                <%= render "partials/discussions", locals: { groupe: @groupe } %>
             </div>
-            <%= render "partials/discussion_post", locals: {groupe: @groupe} %>
+        </div>
+        
+        <% if @groupe.users.include?(current_user) %> 
+            <%= render "partials/discussion_post", locals: { groupe: @groupe } %>
         <% else %>
+            <br>
             <i>Prenez part aux conversations du groupe en vous connectant.</i>
         <% end %>
     </div>

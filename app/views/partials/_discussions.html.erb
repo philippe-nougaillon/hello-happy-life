@@ -1,7 +1,8 @@
 <% @groupe.discussions.last(3).each_with_index do | discussion, index | %>
     <%= render "partials/discussion", 
-                    name: discussion.user.email.split('@').first, 
-                    avatar: "avatar#{discussion.user.id}.png", 
-                    timeago: time_ago_in_words(discussion.created_at),
-                    message: discussion.message %>
+                name: discussion.user.email.split('@').first, 
+                avatar: "avatar#{discussion.user.id}.png", 
+                timeago: time_ago_in_words(discussion.created_at),
+                message: discussion.message,
+                is_member: user_signed_in? ? @groupe.users.include?(current_user) : false %>
 <% end %>

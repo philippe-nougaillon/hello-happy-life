@@ -10,7 +10,7 @@
             <p>
                 <strong><%= local_assigns[:name] %></strong> 
                 <small><%= local_assigns[:timeago] %></small>
-                <div class="content">
+                <div class="content <%= !local_assigns[:is_member] ? 'blur' : '' %>">
                     <%= local_assigns[:message] %>
                 </div>
             </p>
