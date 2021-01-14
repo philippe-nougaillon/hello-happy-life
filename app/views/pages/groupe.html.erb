@@ -34,7 +34,7 @@
         <div class="content">
             <ol class="is-upper-roman">
                 <% @groupe.users.each do | user | %>
-                    <li><%= user == current_user ? "Vous"  : user.email %></li>
+                    <li><%= user == current_user ? "Vous"  : user.email.split('@').first %></li>
                 <% end %>
             </ol>
             
