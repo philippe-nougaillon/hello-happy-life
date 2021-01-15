@@ -8,10 +8,12 @@
         </div>
     </header>
 
-    <div class="card-image">
-        <figure class="image is-4by3">
-            <%= image_tag "#{groupe.activité.nom.downcase.gsub(' ', '-')}.jpg", loading: "lazy" %>
-        </figure>
+    <div class="card-content">
+        <div class="card-image">
+            <figure class="image is-4by3">
+                <%= image_tag groupe.activité.image, loading: "lazy" %>
+            </figure>
+        </div>
     </div>
     
     <% unless params[:groupe_id] %>
