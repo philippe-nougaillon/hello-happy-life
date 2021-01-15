@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   before_action :authenticate_user!, only: [:admin]
 
   def home
-    @groupes = Groupe.all.includes(:activité)
+    @groupes = Groupe.left_joins(:users).group(:id).order("COUNT(users.id) DESC").includes(:activité)
 
     unless params[:activité].blank? 
       @groupes = @groupes.where(activité_id: params[:activité])
