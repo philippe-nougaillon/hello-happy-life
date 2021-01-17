@@ -1,25 +1,23 @@
 <div class="card">
 
-    <header class="card-header">
-        <div class="content">
-            <p class="card-header-title">
-                <%= groupe.activité.nom %></i>
-            </p>
-        </div>
-    </header>
-
-    <div class="card-content">
-        <div class="card-image">
-            <figure class="image is-4by3">
-                <%= image_tag groupe.activité.image, loading: "lazy" %>
-            </figure>
-        </div>
+    <div class="card-image">
+        <figure class="image is-4by3">
+            <%= image_tag groupe.activité.image, loading: "lazy" %>
+        </figure>
     </div>
+
+    <header class="card-header">
+        <p class="card-header-title">
+            <%= groupe.activité.nom %></i>
+        </p>
+    </header>
     
     <% unless params[:groupe_id] %>
         <div class="card-content">
-            <%= truncate groupe.nom, length: 40 %>
-         </div>
+            <small>
+                <%= truncate groupe.nom, length: 50 %>
+            </small>
+        </div>
 
         <footer class="card-footer">
             <p class="card-footer-item">
@@ -38,7 +36,7 @@
     <% else %>
         <div class="card-content">
             <%= groupe.nom %>
-         </div>
+        </div>
     <% end %>
 
 </div>
