@@ -1,7 +1,12 @@
 <div class="tags are-large">
   <% Activité.all.each do | activité | %>
-    <span class="tag is-rounded is-medium">
+    <span class="tag is-rounded is-medium is-light is-info">
       <%= link_to activité.nom, root_path(activité: activité.id) %>
+      <% if params[:activité] == activité.id.to_s %>
+        <%= link_to root_path do %>
+          <button class="delete is-medium"></button>
+        <% end %>
+      <% end %>
     </span>
   <% end %>
 </div>
