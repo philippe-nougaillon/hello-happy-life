@@ -2,20 +2,18 @@
 
     <div class="card-image">
         <figure class="image is-4by3">
-            <%= image_tag groupe.activité.image, loading: "lazy" %>
+            <%= link_to pages_groupe_path(groupe_id: groupe.id) do %>
+                <%= image_tag groupe.activité.image, loading: "lazy" %>
+            <% end %>
         </figure>
     </div>
-
-    <header class="card-header">
-        <p class="card-header-title">
-            <%= groupe.activité.nom %>
-        </p>
-    </header>
     
     <% unless params[:groupe_id] %>
         <div class="card-content">
             <small>
-                <%= truncate groupe.nom, length: 50 %>
+                <strong>
+                    <%= truncate groupe.nom, length: 45 %>
+                </strong>
             </small>
         </div>
 
@@ -27,9 +25,10 @@
                     <% end %>
                 </span>
             </p>
+
             <p class="card-footer-item">
                 <span>
-                    <%= link_to "Rejoindre", pages_groupe_path(groupe_id: groupe.id), class: "card-footer-item" %>
+                    <i><%= groupe.activité.nom %></i>
                 </span>
             </p>
         </footer>

@@ -2,8 +2,6 @@
     
     <div class="column">
         <%= render "partials/groupe", groupe: @groupe %>
-        <br>
-        <%= link_to "Retourner à la liste des activités et des groupes", root_path, class: "button is-small is-text" %>
     </div>
 
     <div class="column">
@@ -54,6 +52,8 @@
         <div class="content">
             <%= render "partials/sortie", locals: {groupe: @groupe} %>
         </div>
+        <%= link_to "Retourner à la liste des activités et des groupes", root_path, class: "button is-small is-text" %>
+
     </div>
 
 </div>
