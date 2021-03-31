@@ -22,7 +22,7 @@
             <%= render "partials/discussion_post", locals: { groupe: @groupe } %>
         <% else %>
             <br>
-            <i>Prenez part aux conversations du groupe en vous connectant.</i>
+            <i><%= "Prenez part aux conversations du groupe en #{ current_user ? 'rejoignant ce groupe' : 'vous connectant'}." %></i>
         <% end %>
     </div>
 
