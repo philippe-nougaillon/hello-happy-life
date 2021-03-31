@@ -1,6 +1,10 @@
 # Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 
 fr:
+  activerecord:
+    attributes:
+      user:
+        remember_me: Se souvenir de moi
   devise:
     confirmations:
       confirmed: "Votre compte a été validé."
