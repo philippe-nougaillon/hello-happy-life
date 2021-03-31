@@ -53,7 +53,7 @@ fr:
       updated: "Votre compte a été modifié avec succès."
       updated_but_not_signed_in: "Votre compte a été modifié avec succès. Merci de vous reconnecter."
     sessions:
-      signed_in: "Connecté."
+      signed_in: "Bienvenue. Vous êtes maintenant connecté."
       signed_out: "Déconnecté."
       already_signed_out: "Déconnecté."
     unlocks:

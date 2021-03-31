@@ -24,6 +24,14 @@ class PagesController < ApplicationController
         flash[:alert] = "Vous devez vous connecter pour rejoindre ce groupe !"
       end
     end
+
+    unless params[:quitter].blank?
+      if current_user
+        @groupe.users.delete(current_user)
+        flash[:notice] = "Vous avez quitté ce groupe."
+      end  
+    end
+
   end
 
   def admin
