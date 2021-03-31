@@ -224,6 +224,8 @@ fr:
       title: "A propos"
     groupe:
       title: "Groupe"
+    admin:
+      title: "Administration"
   devise:
     registrations:
       title: "S'incrire"

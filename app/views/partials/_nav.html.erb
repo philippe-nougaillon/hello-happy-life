@@ -36,14 +36,14 @@
                 class: "button is-primary" 
             %>
           <% else %>        
-            <div class="button is-light">
+            <div class="button is-text">
               <%= link_to current_user.email, edit_user_registration_path(current_user) %>
             </div>
 
             <% if current_user.admin? %>
-              <%= link_to "Admin", 
+              <%= link_to "Administration", 
                   pages_admin_path, 
-                  class: "button is-warning" 
+                  class: "button is-warning is-light" 
               %>
             <% end %>
 
