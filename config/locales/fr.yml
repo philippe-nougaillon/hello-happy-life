@@ -233,3 +233,12 @@ fr:
       title: "Connexion"
     passwords:
       title: "Mot de passe oublié ?"
+  groupes:
+    index:
+      title: "Groupes"
+    new:
+      title: "Nouveau groupe"
+    show: 
+      title: "Détail du groupe"
+    edit:
+      title: "Modification du groupe"
