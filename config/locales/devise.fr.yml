@@ -5,6 +5,9 @@ fr:
     attributes:
       user:
         remember_me: Se souvenir de moi
+        password: Mot de passe
+        password_confirmation: Confirmation
+        
   devise:
     confirmations:
       confirmed: "Votre compte a été validé."
