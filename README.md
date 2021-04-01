@@ -1,6 +1,6 @@
 # A propos de la plateforme
 
-* La vocation de cette plateforme est de réunir ses membres autour d'activités sportives
+* La vocation de cette plateforme est de réunir ses membres autour de la pratique d'une activité
 
 # User stories
 
