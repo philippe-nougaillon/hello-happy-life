@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Organisation.create(nom: "Reynolds Industries")
+Organisation.create(nom: "Reynholm Industries")
 
 Activité.create([{ nom: "Running" }, { nom: "Yoga" }, { nom: "Marche nordique" }, { nom: "Chess Boxing" }, { nom: "Danse de salon" }, { nom: "Pilate" } ])
 
