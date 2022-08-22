@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.2'
+ruby '3.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
+gem 'rails', '~> 7.0.3.1'
 
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3', '~> 1.4'
@@ -63,9 +63,10 @@ gem 'bulma-rails', '~> 0.9.0'
 gem 'bulma-extensions-rails', '~> 6.2.7'
 gem 'bulma_form_builder'
 
-gem 'devise', '~> 4.7.3'
+gem 'devise'
 gem 'pundit'
 
 gem 'sitemap_generator'
 gem 'page_title_helper'
 
+gem 'psych', '< 4'
