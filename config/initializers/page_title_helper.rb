@@ -1,1 +1,1 @@
-PageTitleHelper.options[:app] = 'hello Happy Life!'
+PageTitleHelper.options[:app] = 'Incentive Center'
