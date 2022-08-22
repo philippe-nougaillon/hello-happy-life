@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: redis://redistogo:4a9a92ea70708bdcb40aa3c74af52b96@soapfish.redistogo.com:10997/
+  url: redis://:p5cf9a3d64570b32cc772e9283ce555fbbcb770b50fceb633ee3b39b03fbea926@ec2-54-194-139-149.eu-west-1.compute.amazonaws.com:12509
   channel_prefix: hello-happy-life
